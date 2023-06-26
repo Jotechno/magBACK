@@ -13,6 +13,11 @@ class Server{
         this.app = express()
         this.port = process.env.PORT //Capturando variable puerto
         this.proveedorPath = '/proveedores' //Ruta pública
+        this.app.use(cors({
+            origin: [
+                'http://localhost:8081'
+            ]
+        }))
         this.empleadoPath = '/empleados' 
         this.pagoPath = '/pagos'
         this.comisionPath = '/comisiones'
